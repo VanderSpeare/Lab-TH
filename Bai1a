@@ -1,0 +1,75 @@
+import java.util.Scanner;
+
+public class Xe {
+	String TenChuXe;
+	String LoaiXe;
+	Double TriGia;
+	Integer DungTich;
+	Double ThuePhaiNop;
+public Xe() {}
+public Xe(String TenChuXe, String LoaiXe,Integer DungTich,Double TriGia, Double ThuePhaiNop) {
+	this.TenChuXe=TenChuXe;
+	this.LoaiXe=LoaiXe;
+	this.TriGia=TriGia;
+	this.DungTich=DungTich;
+	this.ThuePhaiNop=ThuePhaiNop;
+}
+public void Nhap() {
+	java.util.Scanner in = new java.util.Scanner(System.in);
+	System.out.println("TenChuXe");
+	TenChuXe = in.nextLine();
+	System.out.println("LoaiXe");
+	LoaiXe = in.nextLine();
+	System.out.println("TriGia");
+	TriGia = in.nextDouble();
+	System.out.println("DungTich");
+	DungTich = in.nextInt();
+}
+public Double ThuePhaiNop() {
+	if(DungTich<100)
+	return ThuePhaiNop= TriGia*0.01;
+	else if(DungTich<200)
+	return ThuePhaiNop= TriGia*0.03;
+	else if(DungTich>200)
+	return ThuePhaiNop= TriGia*0.05;
+	return ThuePhaiNop;
+}
+void Xuat() {
+	System.out.println("========================================================================");
+	System.out.print("TenChuXe: ");
+	System.out.print("\t"+"LoaiXe: ");
+	System.out.print("\t"+"TriGia:"+"\t");
+	System.out.print("\t"+"DungTich:");
+	System.out.print("\t"+"ThuePhaiNop:");
+	
+	System.out.print("\n"+TenChuXe+"\t");
+	System.out.print(LoaiXe+"\t");
+	System.out.print("\t"+TriGia+"\t");
+	System.out.print(DungTich+"\n");
+
+	System.out.println("========================================================================");
+}
+}
+import java.util.Scanner;
+public class Buoi1_1a {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int NhapXe;
+		Xe x= new Xe();
+		System.out.print("1.Nhap '1' De Them Loai Xe");
+		NhapXe=in.nextInt();
+		
+		switch (NhapXe) {
+		case 1:
+			x.Nhap();
+		case 2:
+			x.Xuat();
+			System.out.println(x.ThuePhaiNop());
+		case 3:
+			break;
+		}		
+		
+	}
+
+}
